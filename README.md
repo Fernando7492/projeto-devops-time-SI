@@ -3,4 +3,6 @@ repositório para as atividades da disciplina de Segurança da Informação, da 
 
 Emanuel-Al: Criou o arquivo de apresentação
 
+João Santos: Criou o arquivo de apresentação(Joao-Victor-Santos-apresentacao.md).
+
 Bem vindo ao nosso projeto
