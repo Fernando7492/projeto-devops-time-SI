@@ -5,4 +5,4 @@ Emanuel-Al: Criou o arquivo de apresentação
 
 João Santos: Criou o arquivo de apresentação(Joao-Victor-Santos-apresentacao.md).
 
-Bem vindo ao nosso projeto
+Bem-vindo ao nosso projeto.
