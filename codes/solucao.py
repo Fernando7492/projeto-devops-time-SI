@@ -7,6 +7,7 @@
 import torch
 import matplotlib.pyplot as plt
 import csv
+import os
 
 from communication import CommunicationSystem
 from bob import BobPLSDNN, treinar_bob
@@ -15,7 +16,7 @@ from eve import avaliar_eve
 # --------------------
 # CONFIGS
 # --------------------
-MESSAGE_LEN = 256
+MESSAGE_LEN = 1000
 BATCH_SIZE = 128
 NUM_EPOCHS = 600
 LEARNING_RATE = 0.0015
@@ -76,13 +77,18 @@ print(f"Security Gap: {security_gap} dB")
 # --------------------
 print("\nSalvando métricas em resultados_snr.csv ...")
 
-with open("resultados_snr.csv", "w", newline="") as f:
+csv_path = "resultados_snr.csv"
+file_exists = os.path.isfile(csv_path)
+
+with open(csv_path, "a", newline="") as f:
     writer = csv.writer(f)
-    writer.writerow(["snr_bob", "ber_bob", "snr_eve",
-                    "ber_eve", "security_gap"])
+    if not file_exists:
+        writer.writerow(["snr_bob", "ber_bob", "snr_eve",
+                        "ber_eve", "security_gap"])
+
     writer.writerow([SNR_BOB_DB, ber_bob, SNR_EVE_DB, ber_eve, security_gap])
 
-print("Arquivo resultados_snr.csv gerado com sucesso.")
+print("Resultados adicionados ao arquivo resultados_snr.csv.")
 
 # --------------------
 # GRÁFICO
